@@ -32,13 +32,8 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout', 'signup', 'about'],
+                'only' => ['logout', 'about'],
                 'rules' => [
-                    [
-                        'actions' => ['signup'],
-                        'allow' => true,
-                        'roles' => ['?'],
-                    ],
                     [
                         'actions' => ['logout'],
                         'allow' => true,
@@ -199,7 +194,7 @@ class SiteController extends Controller
                 $text .= $news_text[$i] . ".";
             }
 
-            $message = '<h4><a href="/login/"><b>Для читання повної версії потрібно авторизуватися</b></a></h4>';
+            $message = '<h4><a href="/login/"><b>To read full news you must log in</b></a></h4>';
             return $this->render('view', [
                 'category' => $category,
                 'news' => $news,

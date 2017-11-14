@@ -6,15 +6,13 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
-use yii\widgets\Menu;
 use app\models\category\Category;
-
+use app\models\themes\Themes;
 AppAsset::register($this);
 
 $categories = Category::getItems();
+$themes = Themes::findAll('1')[0];
 ?>
 <?php $this->beginPage() ?>
     <!DOCTYPE html>
@@ -62,12 +60,12 @@ $categories = Category::getItems();
             }
         }
     </script>
-    <body>
+    <body style="background-color: <?= $themes['site_color']?>;">
     <?php $this->beginBody() ?>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top justify-content-between"
-         style="background-color: #e3f2fd;">
+         style="background-color: <?= $themes['navbar_color']?>;">
         <a class="navbar-brand" href="/">News.net</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

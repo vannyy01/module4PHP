@@ -16,7 +16,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a( 'ADMIN_USERS', ['users/index'], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a( 'ADMIN_COMMENTS', ['comments/index'], ['class' => 'btn btn-secondary']) ?>
+        <?= Html::a('Police comments check', ['comments/police'], ['class' => 'btn btn-primary'])?>
         <?= Html::a( 'ADMIN_NEWS', ['news/index'], ['class' => 'btn btn-second']) ?>
         <?= Html::a( 'ADMIN_CATEGORIES', ['category/index'], ['class' => 'btn btn-second']) ?>
+        <?= Html::a( 'ADMIN_SITE_THEMES', ['themes/index'], ['class' => 'btn btn-primary']) ?>
     </p>
 </div>

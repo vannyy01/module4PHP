@@ -16,7 +16,9 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="user-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?= Html::a('ADMIN START PAGE', ['/admin/default'], ['class' => 'btn btn-success']) ?>
+
+    <?php  echo $this->render('_search', ['model' => $searchModel]); ?>
     <? echo Breadcrumbs::widget(['links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],]);?>
 
     <p>
